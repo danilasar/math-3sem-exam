@@ -14,8 +14,8 @@
 + Тригонометрический ряд. Коэффициенты Фурье и рд Фурье. Ядро Дирихле.
 = Ответы
 #{
-	let first = 1 
-	let last = 10
+	let first = 1
+	let last = 21
 	for ticketid in range(first, last + 1) {
 		let ticketname = str(ticketid) + ".typ"
 		while ticketname.len() < str(last).len() + ".typ".len() {
