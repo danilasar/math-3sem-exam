@@ -21,6 +21,9 @@
 		while ticketname.len() < str(last).len() + ".typ".len() {
 			ticketname = "0" + ticketname
 		}
+		context counter(heading).update((counter(heading).get().at(0),ticketid))
 		include "tickets/" + ticketname
 	}
 }
+
+
