@@ -15,7 +15,7 @@
 = Ответы
 #{
 	let first = 1
-	let last = 21
+	let last = 22
 	for ticketid in range(first, last + 1) {
 		let ticketname = str(ticketid) + ".typ"
 		while ticketname.len() < str(last).len() + ".typ".len() {
