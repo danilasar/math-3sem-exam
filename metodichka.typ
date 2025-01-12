@@ -32,7 +32,3 @@
 	}
 	load_tickets()
 }
-  }
- }
- load_tickets()
-}
