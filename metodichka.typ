@@ -1,26 +1,36 @@
-#set heading(numbering: (..nums) => {
-	nums.pos().map(str).slice(1).join(".") + ""
-})
-
 = Методическое пособие по математическому анализу
 Материалы для подготовки к экзамену.\
 Григорьев Данила, 2025 год.
-= Вопросы
-+ Гладкая поверхность. Ориентация поверхности. Площадь поверхности.
-+ Поверхностный интеграл первого рода и теорема о его существовании.
-+ Поверхностный интеграл первого рода и теорема о его существовании.
-+ Поверхностный интеграл второго рода и его свойства
-+ Тригонометрическая система, ортогональность тригонометрической системы и свойства интеграла от периодической функции.
-+ Тригонометрический ряд. Коэффициенты Фурье и рд Фурье. Ядро Дирихле.
+#outline(title: "Вопросы", target: heading.where(level: 2, supplement: [Вопрос]))
+
 = Ответы
 #{
-	let first = 1
-	let last = 22
-	for ticketid in range(first, last + 1) {
-		let ticketname = str(ticketid) + ".typ"
-		while ticketname.len() < str(last).len() + ".typ".len() {
-			ticketname = "0" + ticketname
+	let load_tickets = () => {
+		let tickets_offset = 1
+		set heading(numbering: (..nums) => {
+			let number = nums.pos().map(str).slice(1).join(".")
+			if number != none {
+				"Вопрос " + number + "."
+			}
+		}, supplement: [Вопрос], offset: tickets_offset)
+		let first = 1
+		let last = 21
+		for ticketid in range(first, last + 1) {
+			let ticketname = str(ticketid) + ".typ"
+			while ticketname.len() < str(last).len() + ".typ".len() {
+				ticketname = "0" + ticketname
+			}
+			counter(heading).update((..nums) => {
+				let arr = nums.pos()
+				if arr.len() > tickets_offset {
+					arr.at(tickets_offset) = ticketid - 1
+				}
+				return arr
+			})
+			include "tickets/" + ticketname
 		}
-		include "tickets/" + ticketname
 	}
+	load_tickets()
 }
+
+
