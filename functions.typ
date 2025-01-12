@@ -13,6 +13,9 @@
 		if proof != [] {
 			par[*Доказательство*:]
 			par(proof)
+			set align(right)
+			$square.filled$
+			set align(left)
 		}
 	})
 }
