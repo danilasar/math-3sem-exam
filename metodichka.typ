@@ -2,6 +2,7 @@
 Материалы для подготовки к экзамену.\
 Григорьев Данила, 2025 год.
 #outline(title: "Вопросы", target: heading.where(level: 2, supplement: [Вопрос]))
+#set math.equation(numbering: "(1)", supplement: [])
 
 = Ответы
 #{
